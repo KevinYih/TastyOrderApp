@@ -1,5 +1,284 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* 使用绿色渐变背景，给人清新自然的感觉 */
+  background: linear-gradient(#e0f2e9, #b5dea6);
+  /* 正文采用较深的绿色，保证可读性 */
+  color: #2d4739;
+  min-height: 100vh;
+}
+
+#main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 10%;
+}
+
+#main-header #title {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#main-header #title img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  border-radius: 50%;
+  /* 用健康的绿色作为头像图片的边框颜色 */
+  border: 2px solid #8bc34a;
+}
+
+#main-header button {
+  font-size: 1.5rem;
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0;
+  /* 标题采用深绿色 */
+  color: #558b2f;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+#meals {
+  width: 90%;
+  max-width: 70rem;
+  list-style: none;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+
+.meal-item {
+  /* 将原深色背景替换为温暖的浅黄色调，让食物更诱人 */
+  background-color: #fff9e6;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.meal-item article {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.meal-item img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.meal-item h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.75rem 0;
+}
+
+.meal-item-description {
+  margin: 1rem;
+}
+
+.meal-item-price {
+  display: inline-block;
+  /* 使用清新的浅绿色背景，使价格标签看起来温和而自然 */
+  background-color: #dcedc8;
+  /* 深绿色文字增强可读性 */
+  color: #33691e;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+  margin: 0;
+  border-radius: 4px;
+}
+
+.meal-item-actions {
+  margin-bottom: 1.5rem;
+}
+
+.cart h2 {
+  margin: 1rem 0;
+}
+
+.cart ul {
+  list-style: none;
+  margin: 0.5rem 0;
+  padding: 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.modal-actions .text-button {
+  /* 使用较深绿色 */
+  color: #33691e;
+}
+
+.modal-actions .text-button:hover,
+.modal-actions .text-button:active {
+  color: #2e7d32;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2rem 0;
+  font-size: 1.15rem;
+  font-weight: bold;
+  /* 采用健康的深绿色 */
+  color: #2e7d32;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.cart-item p {
+  margin: 0;
+}
+
+.cart-item-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.cart-item-actions button {
+  cursor: pointer;
+  font-size: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: none;
+  /* 使用与价格标签类似的浅绿色背景 */
+  background-color: #dcedc8;
+  /* 深绿色文字 */
+  color: #33691e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-item-actions button:hover,
+.cart-item-actions button:active {
+  /* 稍深的绿色变化，提示交互 */
+  background-color: #c5e1a5;
+  color: #558b2f;
+}
+
+.control {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.control input {
+  width: 100%;
+  max-width: 20rem;
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.control-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.button {
+  font: inherit;
+  cursor: pointer;
+  /* 采用明亮的绿色按钮 */
+  background-color: #8bc34a;
+  border: 1px solid #8bc34a;
+  /* 改为白色，形成对比 */
+  color: #ffffff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+}
+
+.button:hover,
+.button:active {
+  /* 稍暗的绿色过渡 */
+  background-color: #7cb342;
+  border-color: #7cb342;
+  color: #ffffff;
+}
+
+.text-button {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  /* 绿色风格 */
+  color: #8bc34a;
+}
+
+.text-button:hover,
+.text-button:active {
+  color: #7cb342;
+}
+
+.modal {
+  /* 使用清新的浅绿色背景 */
+  background-color: #f3f9f1;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  width: 80%;
+  max-width: 40rem;
+  animation: fade-slide-up 0.3s ease-out forwards;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 
 * {
   box-sizing: border-box;
 }
@@ -259,4 +538,4 @@ h1 {
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
